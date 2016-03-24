@@ -1,7 +1,8 @@
-require 'sinatra'
+require 'sinatra/base'
+require 'tilt/erb'
+require 'sinatra/activerecord'
 
-set :port, '8001'
-set :bind, '45.55.18.164'
+class PetsApp < Sinatra::Base
 
 get "/" do
   @dog = "Rex"
@@ -10,5 +11,7 @@ end
 
 get "/about" do
   erb :about
+end
+
 end
 
